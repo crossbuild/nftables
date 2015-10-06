@@ -1957,6 +1957,8 @@ static uint32_t str2hooknum(uint32_t family, const char *hook)
 			return NF_INET_POST_ROUTING;
 		else if (!strcmp(hook, "output"))
 			return NF_INET_LOCAL_OUT;
+		else if (!strcmp(hook, "socketinput"))
+			return NF_INET_LOCAL_SOCKET_IN;
 		break;
 	case NFPROTO_ARP:
 		if (!strcmp(hook, "input"))

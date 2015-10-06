@@ -456,6 +456,7 @@ static const char *chain_hookname_str_array[] = {
 	"postrouting",
 	"output",
 	"ingress",
+	"socketinput",
 	NULL,
 };
 
@@ -560,6 +561,8 @@ const char *hooknum2str(unsigned int family, unsigned int hooknum)
 			return "postrouting";
 		case NF_INET_LOCAL_OUT:
 			return "output";
+		case NF_INET_LOCAL_SOCKET_IN:
+			return "socketinput";
 		default:
 			break;
 		};
